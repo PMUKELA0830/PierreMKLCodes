@@ -7,8 +7,6 @@ public class MCcreditCard extends CreditCard{
 	CreditCard MCcreditCard = new CreditCard();
 	
 	
-	
-	
 	public double getInterestForMC() {
 		return interestForMC;
 	}
@@ -16,7 +14,4 @@ public class MCcreditCard extends CreditCard{
 	public void setInterestForMC(double interestForMC) {
 		this.interestForMC = interestForMC;
 	}
-
-	
-
 }
