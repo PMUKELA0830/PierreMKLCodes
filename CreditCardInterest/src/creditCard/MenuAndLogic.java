@@ -20,26 +20,9 @@ public class MenuAndLogic {
 	Scanner input = new Scanner(System.in);
 	
 	//Let us define a public scanner
-	// Below is a nice method that will
-	// be used as our scanner throughout this program
-	
-	// public static Scanner enterInput() {
-		// Scanner is treated as a class or object
-		// Therefore it can be used as a data type
-		// Let us instantiate a the Scanner object
 		
+	Scanner scannerInput = new Scanner(System.in);
 		
-		Scanner scannerInput = new Scanner(System.in);
-		
-		// Since the return type is Scanner, we will return 
-		// a variable or object of that type
-		// which in this case is scannerInput
-		
-		
-		//		return scannerInput;
-	//}
-	
-	
 	public static void showMenu() {
 		System.out.println("Welcome to our credit card interest charge calculator\n"
 				+ "\nBelow are the options of what our calculator can do:"
@@ -62,17 +45,9 @@ public class MenuAndLogic {
 		switch (choice) {
 		
 		case 1: {//Find Visa cards interest charge
-			
-			//Get the balance from the user using this predefined scanner method
-			//called getBalanceForCredCard()
-			
-			//Now set the balance on the visaCredCard object to be the value 
-			//stored in the variable balance. This is just for safety
+	
 			visaCredCard.setBalance(getBalanceForCredCard());
 			
-			//Now use the getter of this object to pass in the balance into the 
-			//method to find the interest charge. Note that we also could have used
-			//just the variable balance and gotten the same result
 			interestCharge = interestChargeVisa(visaCredCard.getBalance());
 			
 			//Now let us print out the result to the console output
