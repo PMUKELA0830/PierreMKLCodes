@@ -8,13 +8,10 @@ public class MenuAndLogic {
 	MCcreditCard mcCredCard = new MCcreditCard();
 	DiscoverCreditCard discoverCredCard = new DiscoverCreditCard();
 	
-	
-	
 	public void menuLogic() {
 		
 			enterChoice();
 	}
-	
 	
 	//Instantiate a scanner to be used in the program
 	Scanner input = new Scanner(System.in);
@@ -143,8 +140,4 @@ public class MenuAndLogic {
 			
 			return interestCharge;
 		}
-	
-	
-	
-
 }
