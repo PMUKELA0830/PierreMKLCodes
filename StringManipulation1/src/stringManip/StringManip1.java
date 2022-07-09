@@ -7,32 +7,6 @@ public class StringManip1 {
 	
 	private String stringInputModified;
 	
-	/*Write a method to replace all spaces in a string with '%20'. 
-	 * You may assume that the string has sufficient space at the end 
-	 * to hold the additional characters. and that you are given the "true" 
-	 * length of the string.
-	 * 
-	 * Example : "Mr. John Smith       ";RESULT: "Mr.%20John%20Smith%20"
-	 */
-	
-	
-	/*Algorithm 
-	 * 
-	 * [1] write a method to split the string input at the white space
-	 * 
-	 * [2] use the concept of substrings and concatenation to connect 
-	 * 	   these substrings after splitting and insert the two characters
-	 * 	   %20 in between
-	 * 
-	 * 
-	 * Follow these examples
-	 * 
-	 * 
-	 */
-	
-	
-	//This method will implement a solution for the above problem
-	
 	public int countWhiteSpace(String stringInput) {
 		int count = 0;
 		
@@ -51,13 +25,10 @@ public class StringManip1 {
 	}
 	
 	public String splitStringAddCharr(String stringInput) {
-		String[] tempStringInput = stringInput.split(" "); //After splitting the string input
-		                                                   // we get an array of size subtract all
-		                                                   // white spaces
-		// we need to create a counter of white space and add the the size tempStringInput the count
-		// of all white spaces
+		String[] tempStringInput = stringInput.split(" "); 
 		
-		System.out.println("Here is the array of stringInput split in substrings: " + Arrays.toString(tempStringInput));
+		System.out.println("Here is the array of stringInput split in substrings: " 
+				   + Arrays.toString(tempStringInput));
 		
 		
 		//String[] modifiedString = new String[2 * tempStringInput.length - 1];
@@ -74,9 +45,7 @@ public class StringManip1 {
 			 if (i == tempStringInput.length - 1) {
 				modifiedString += tempStringInput[i];
 			} 	
-		} lastResult = modifiedString; // This is the most updated result
-		                               // If set to the variable inside the loop,
-		                               // we don't get the final result
+		} lastResult = modifiedString; 
 		
 		return lastResult;
 	}
