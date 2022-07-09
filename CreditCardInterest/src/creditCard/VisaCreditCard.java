@@ -5,8 +5,6 @@ public class VisaCreditCard extends CreditCard{
 	CreditCard visaCreditCard = new CreditCard();
 	private double interestForVisa;
 
-
-
 	public void setInterestForVisa(double interestForVisa) {
 		this.interestForVisa = interestForVisa;
 	}
@@ -16,7 +14,4 @@ public class VisaCreditCard extends CreditCard{
 		return this.interestForVisa;
 		
 	}
-	
-	
-
 }

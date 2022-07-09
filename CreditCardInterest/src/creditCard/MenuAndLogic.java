@@ -8,38 +8,18 @@ public class MenuAndLogic {
 	MCcreditCard mcCredCard = new MCcreditCard();
 	DiscoverCreditCard discoverCredCard = new DiscoverCreditCard();
 	
-	
-	
 	public void menuLogic() {
 		
 			enterChoice();
 	}
 	
-	
 	//Instantiate a scanner to be used in the program
 	Scanner input = new Scanner(System.in);
 	
 	//Let us define a public scanner
-	// Below is a nice method that will
-	// be used as our scanner throughout this program
-	
-	// public static Scanner enterInput() {
-		// Scanner is treated as a class or object
-		// Therefore it can be used as a data type
-		// Let us instantiate a the Scanner object
 		
+	Scanner scannerInput = new Scanner(System.in);
 		
-		Scanner scannerInput = new Scanner(System.in);
-		
-		// Since the return type is Scanner, we will return 
-		// a variable or object of that type
-		// which in this case is scannerInput
-		
-		
-		//		return scannerInput;
-	//}
-	
-	
 	public static void showMenu() {
 		System.out.println("Welcome to our credit card interest charge calculator\n"
 				+ "\nBelow are the options of what our calculator can do:"
@@ -62,17 +42,9 @@ public class MenuAndLogic {
 		switch (choice) {
 		
 		case 1: {//Find Visa cards interest charge
-			
-			//Get the balance from the user using this predefined scanner method
-			//called getBalanceForCredCard()
-			
-			//Now set the balance on the visaCredCard object to be the value 
-			//stored in the variable balance. This is just for safety
+	
 			visaCredCard.setBalance(getBalanceForCredCard());
 			
-			//Now use the getter of this object to pass in the balance into the 
-			//method to find the interest charge. Note that we also could have used
-			//just the variable balance and gotten the same result
 			interestCharge = interestChargeVisa(visaCredCard.getBalance());
 			
 			//Now let us print out the result to the console output
@@ -86,12 +58,6 @@ public class MenuAndLogic {
 			
 			mcCredCard.setBalance(getBalanceForCredCard());
 			
-			//You can take the long way about it by creating a variable outside the switch case statement
-			//and assign a value of getBalance() to it since this method return a double type of value
-			//It should be done as follows:
-			// balance = getBalanceForCredCard();
-			
-			//case 3 implements this way of setting the balance using a variable called balance.
 			interestCharge = interestChargeMC(mcCredCard.getBalance());
 			
 			System.out.println("\nThe current interest charge on your credit card is: " + interestCharge + "\n\n");
@@ -120,13 +86,10 @@ public class MenuAndLogic {
 		default: {
 			System.out.println("Invalid entry, please enter a number from 0 to 3!\n");
 			enterChoice();
+				}
+			}
 		}
-		}
-		}
-		
 	}
-	
-	
 	
 	public double getBalanceForCredCard() {
 		double balance = 0;
@@ -138,8 +101,6 @@ public class MenuAndLogic {
 		
 		return balance;
 	}
-	
-	
 	
 	// [1] Visa credit card interest charge
 	public double interestChargeVisa(double balance) {
@@ -179,8 +140,4 @@ public class MenuAndLogic {
 			
 			return interestCharge;
 		}
-	
-	
-	
-
 }
