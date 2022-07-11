@@ -69,19 +69,19 @@ public class LetterCode {
 			
 			if (messageArr[i] == ' ') {
 				
-				encodedMessage += " " + Character.toString(0);
+				encodedMessage += " " + String.valueOf(0);
 			}
 			
 			else if (Character.isLetter(messageArr[i]) == false) {
-				encodedMessage += " " + Character.toString(99);
+				encodedMessage += " " + String.valueOf(99);
 			}
 			
 			else if (Character.isUpperCase(messageArr[i]) == true) {
-				encodedMessage += " " + Character.toString(asciiLetter - 64);
+				encodedMessage += " " + String.valueOf(asciiLetter - 64);
 				}
 			
 			else if (Character.isLowerCase(messageArr[i]) == true) {
-				encodedMessage += " " + Character.toString(asciiLetter - 96);
+				encodedMessage += " " + String.valueOf(asciiLetter - 96);
 			}
 			}
 		
@@ -89,6 +89,8 @@ public class LetterCode {
 		
 		return encodedMessage;
 	}
+	
+	// The decoder takes in an encoded message as shown above and turns it back into the actual letters
 	
 	public static String Decode(String message) {
 		
