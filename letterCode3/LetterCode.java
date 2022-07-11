@@ -49,8 +49,8 @@ public class LetterCode {
 		
 		
 		
-		
-	
+	// The encoder takes in a string message and converts it to number as follows: A = 1, B = 2, C = 3, ..., Z = 26
+	// white space = 0, any special character = 99
 	
 	
 	public static String Encode(String message) {
