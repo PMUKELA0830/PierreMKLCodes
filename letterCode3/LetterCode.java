@@ -49,8 +49,8 @@ public class LetterCode {
 		
 		
 		
-		
-	
+	// The encoder takes in a string message and converts it to number as follows: A = 1, B = 2, C = 3, ..., Z = 26
+	// white space = 0, any special character = 99
 	
 	
 	public static String Encode(String message) {
@@ -69,19 +69,19 @@ public class LetterCode {
 			
 			if (messageArr[i] == ' ') {
 				
-				encodedMessage += " " + Character.toString(0);
+				encodedMessage += " " + String.valueOf(0);
 			}
 			
 			else if (Character.isLetter(messageArr[i]) == false) {
-				encodedMessage += " " + Character.toString(99);
+				encodedMessage += " " + String.valueOf(99);
 			}
 			
 			else if (Character.isUpperCase(messageArr[i]) == true) {
-				encodedMessage += " " + Character.toString(asciiLetter - 64);
+				encodedMessage += " " + String.valueOf(asciiLetter - 64);
 				}
 			
 			else if (Character.isLowerCase(messageArr[i]) == true) {
-				encodedMessage += " " + Character.toString(asciiLetter - 96);
+				encodedMessage += " " + String.valueOf(asciiLetter - 96);
 			}
 			}
 		
@@ -90,38 +90,35 @@ public class LetterCode {
 		return encodedMessage;
 	}
 	
+	// The decoder takes in an encoded message as shown above and turns it back into the actual letters
+	
 	public static String Decode(String message) {
 		
 		String decodedMessage = "";
 		//char[] messageArr = message.toCharArray();
 		
-		String[] messageSplit = message.split(" ");
+		String[] messageSplit = message.split(",");
 		
 		
 		for (int i = 0; i < messageSplit.length; i++) {
 			
 			int asciiNumber = (int)messageSplit[i].charAt(0);
 			
-			if ((int)messageSplit[i].charAt(0) == 48) {
+			if (Integer.parseInt(messageSplit[i]) == 0) {
 				
 				decodedMessage += " ";
 				
 			}
 			
-			else if ((int)messageSplit[i].charAt(0) >= 65 && (int)messageSplit[i].charAt(0) <= 90) {
-				decodedMessage += (char)((int)messageSplit[i].charAt(0) + 64);
+			else if (Integer.parseInt(messageSplit[i]) >= 1 && Integer.parseInt(messageSplit[i]) <= 26) {
+				decodedMessage += (char)(Integer.parseInt(messageSplit[i]) + 64);
 			}
 			
-			else if ((int)messageSplit[i].charAt(0) >= 97 && (int)messageSplit[i].charAt(0) <= 122) {
-				decodedMessage += (char)((int)messageSplit[i].charAt(0) + 96);
-			}
-			
-			else if ((int)messageSplit[i].charAt(0) == 9 && (int)messageSplit[i].charAt(1) == 9) {
-				decodedMessage += "?";
+			else if (Integer.parseInt(messageSplit[i]) == 99) {
+				decodedMessage += " ?#";
 			}
 			
 		}
-		
 		
 		return decodedMessage;
 	}
