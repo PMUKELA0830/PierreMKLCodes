@@ -95,33 +95,28 @@ public class LetterCode {
 		String decodedMessage = "";
 		//char[] messageArr = message.toCharArray();
 		
-		String[] messageSplit = message.split(" ");
+		String[] messageSplit = message.split(",");
 		
 		
 		for (int i = 0; i < messageSplit.length; i++) {
 			
 			int asciiNumber = (int)messageSplit[i].charAt(0);
 			
-			if ((int)messageSplit[i].charAt(0) == 48) {
+			if (Integer.parseInt(messageSplit[i]) == 0) {
 				
 				decodedMessage += " ";
 				
 			}
 			
-			else if ((int)messageSplit[i].charAt(0) >= 65 && (int)messageSplit[i].charAt(0) <= 90) {
-				decodedMessage += (char)((int)messageSplit[i].charAt(0) + 64);
+			else if (Integer.parseInt(messageSplit[i]) >= 1 && Integer.parseInt(messageSplit[i]) <= 26) {
+				decodedMessage += (char)(Integer.parseInt(messageSplit[i]) + 64);
 			}
 			
-			else if ((int)messageSplit[i].charAt(0) >= 97 && (int)messageSplit[i].charAt(0) <= 122) {
-				decodedMessage += (char)((int)messageSplit[i].charAt(0) + 96);
-			}
-			
-			else if ((int)messageSplit[i].charAt(0) == 9 && (int)messageSplit[i].charAt(1) == 9) {
-				decodedMessage += "?";
+			else if (Integer.parseInt(messageSplit[i]) == 99) {
+				decodedMessage += " ?#";
 			}
 			
 		}
-		
 		
 		return decodedMessage;
 	}
